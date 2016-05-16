@@ -54,12 +54,12 @@ div{
           jsonp: 'jsoncallback',
           success:function(data){
             console.log(data);
-            if(data==0){
+            if(data=='0'){
               $("#msg").val("");
-            };
-            if(data==-1){
+            }
+            if(data=='-1'){
               alert('该房间已失效');
-            };
+            }
           }
         });
     }
