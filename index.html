@@ -18,15 +18,16 @@
       var msg = $("#msg").val();
     if(room && msg){
       $.ajax({url: "http://121.42.211.99:3000/msg/"+room+"/23213123-212131-"+msg,
-         type: "GET",
-         dataType: 'jsonp',
-         jsonp: 'jsoncallback',
-      }, function(data){
-        console.log(data);
-        if(data==0){
-          $("#msg").val("");
-        }
-      })
+          type: "GET",
+          dataType: 'jsonp',
+          jsonp: 'jsoncallback',
+          success:function(data){
+            console.log(data);
+            if(data==0){
+              $("#msg").val("");
+            }
+          }
+        });
     }
   });
   
