@@ -17,7 +17,7 @@
     var room = $("#room").val();
       var msg = $("#msg").val();
     if(room && msg){
-      $.get("http://121.42.211.99:3000/msg/"+room+"/23213123-212131-"+msg, function(data){
+      $.jsonp("http://121.42.211.99:3000/msg/"+room+"/23213123-212131-"+msg, function(data){
         if(data==0){
           $("#msg").val("");
         }
