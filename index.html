@@ -1,19 +1,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link href="//cdn.bootcss.com/pure/0.6.0/pure.css" rel="stylesheet">
 </head>
 爱吐槽主页
 
 <a href="http://o794sesc8.bkt.clouddn.com/Nag.apk">点击下载安卓安装包</a>
+<form class="pure-form">
 
-<input type="text" id="room" placeholder="room number"></input>
-<input type="text" id="msg" placeholder="msg"></input>
-<input type="submit" id="send"></input>
+    <fieldset class="pure-group">
+        <input id="room" type="text" class="pure-input-1-2" placeholder="房间号">
+        <textarea id="msg" class="pure-input-1-2" placeholder="消息"></textarea>
+    </fieldset>
+
+    <button id="send" type="submit" class="pure-button pure-input-1-2 pure-button-primary">发送</button>
+</form>
+
 
 
 <script src="http://mat1.gtimg.com/libs/jquery2/2.2.0/jquery.js"></script>
 <script>
-  $("#send").on('click', function(){
+  $("#send").on('click', function(e){
+    e.preventDefault();
     var room = $("#room").val();
       var msg = $("#msg").val();
     if(room && msg){
