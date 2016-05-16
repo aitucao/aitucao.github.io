@@ -2,7 +2,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="//cdn.bootcss.com/pure/0.6.0/pure.css" rel="stylesheet">
-<link href="http://o794sesc8.bkt.clouddn.com/simply-toast.min.css" rel="stylesheet">
 
 <style>
 .pure-form fieldset {
@@ -42,7 +41,6 @@ div{
 
 
 <script src="http://mat1.gtimg.com/libs/jquery2/2.2.0/jquery.js"></script>
-<script src="http://o794sesc8.bkt.clouddn.com/simply-toast.min.js"></script>
 
 <script>
   $("#send").on('click', function(e){
@@ -60,7 +58,7 @@ div{
               $("#msg").val("");
             }
             if(data==-1){
-              $.simplyToast('该房间已失效', 'warning');
+              alert('该房间已失效');
             }
           }
         });
