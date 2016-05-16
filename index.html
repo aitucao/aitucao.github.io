@@ -2,6 +2,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link href="//cdn.bootcss.com/pure/0.6.0/pure.css" rel="stylesheet">
+<link href="http://o794sesc8.bkt.clouddn.com/simply-toast.min.css" rel="stylesheet">
+
 <style>
 .pure-form fieldset {
     padding: 0 20px;
@@ -14,7 +16,6 @@ input#room {
 textarea#msg{
     margin-top: 50px;
     width:100%;
-    height:250px;
     font-size: 50px;
 }
 button#send {
@@ -41,6 +42,8 @@ div{
 
 
 <script src="http://mat1.gtimg.com/libs/jquery2/2.2.0/jquery.js"></script>
+<script src="http://o794sesc8.bkt.clouddn.com/simply-toast.min.js"></script>
+
 <script>
   $("#send").on('click', function(e){
     e.preventDefault();
@@ -55,6 +58,9 @@ div{
             console.log(data);
             if(data==0){
               $("#msg").val("");
+            }
+            if(data==-1){
+              $.simplyToast('该房间已失效', 'warning');
             }
           }
         });
