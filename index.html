@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link href="//cdn.bootcss.com/pure/0.6.0/pure.css" rel="stylesheet">
+<link href="http://cdn.bootcss.com/pure/0.6.0/pure.css" rel="stylesheet">
 
 <style>
 .pure-form fieldset {
@@ -51,19 +51,20 @@ div{
       $.ajax({url: "http://121.42.211.99:3000/msg/"+room+"/23213123-212131-"+msg,
           type: "GET",
           dataType: 'jsonp',
-          jsonp: 'jsoncallback',
-          success:function(data){
-            console.log(data);
-            if(data==0){
-              $("#msg").val("");
-            }
-            if(data==-1){
-              alert('该房间已失效');
-            }
-          }
+          jsonp: 'callback',
+          jsonpCallback: myCallback
         });
     }
   });
+
+  window.myCallback = function(data) {
+    $("#msg").val("");
+    if(data==-1){
+      alert('该房间已失效');
+    }
+  };
+
+
   
 </script>
 </html>
